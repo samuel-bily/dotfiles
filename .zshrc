@@ -82,5 +82,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias android="cd /mnt/0CD29A8C5AE8D3E5/Samuel/Android/"
+alias x="xset led 3"
+alias a="cd /mnt/0CD29A8C5AE8D3E5/Samuel/Android/"
+alias c="/mnt/0CD29A8C5AE8D3E5/Samuel/Android/SDK/platform-tools/adb connect "
+alias swap="sudo swapoff -a && sudo swapon -a"
 alias raspi="ssh pi@raspberry-pi-samuel.local"
+alias up="sudo apt-get update && sudo apt-get upgrade"
+alias so="sudo swapoff -a"
+alias sn="sudo swapon -a"
+
