@@ -49,7 +49,7 @@ ZSH_THEME="sonicradish"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git sudo web-search)
 
 # User configuration
 
@@ -86,10 +86,14 @@ alias x="xset led 3"
 alias a="cd /home/samuel/Projects/Android/"
 alias c="/home/samuel/Projects/Android/Sdk/platform-tools/adb connect "
 alias adb="/home/samuel/Projects/Android/Sdk/platform-tools/adb "
+alias fastboot="/home/samuel/Projects/Android/Sdk/platform-tools/fastboot"
 alias swap="sudo swapoff -a && sudo swapon -a"
-alias raspi="ssh pi@raspberrypi.local"
+alias raspi="ssh pi@0.tcp.eu.ngrok.io -p 14315"
 alias vps="ssh 139.59.136.208"
 alias up="sudo apt-get update && sudo apt-get upgrade"
 alias so="sudo swapoff -a"
 alias sn="sudo swapon -a"
 
+function git_diff() {
+	git diff --no-ext-diff -w "$@" | vim -R -
+}
