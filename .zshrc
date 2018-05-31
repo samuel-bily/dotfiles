@@ -1,11 +1,12 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/samuel/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sonicradish"
+ZSH_THEME="agnoster"
+#ZSH_THEME="sonicradish"
 #ZSH_THEME="random"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,6 +57,8 @@ plugins=(git sudo web-search)
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+DEFAULT_USER=`whoami`
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -84,15 +87,19 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias x="xset led 3"
 alias a="cd /home/samuel/Projects/Android/"
-alias c="/home/samuel/Projects/Android/Sdk/platform-tools/adb connect "
-alias adb="/home/samuel/Projects/Android/Sdk/platform-tools/adb "
-alias fastboot="/home/samuel/Projects/Android/Sdk/platform-tools/fastboot"
+alias c="~/Library/Android/sdk/platform-tools/adb connect "
+alias adb="~/Library/Android/sdk/platform-tools/adb "
+alias emulator="~/Library/Android/sdk/tools/emulator"
+alias fastboot="~/Library/Android/sdk/platform-tools/fastboot"
 alias swap="sudo swapoff -a && sudo swapon -a"
 alias raspi="ssh pi@0.tcp.eu.ngrok.io -p 14315"
 alias vps="ssh 139.59.136.208"
 alias up="sudo apt-get update && sudo apt-get upgrade"
 alias so="sudo swapoff -a"
 alias sn="sudo swapon -a"
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
 
 function git_diff() {
 	git diff --no-ext-diff -w "$@" | vim -R -
